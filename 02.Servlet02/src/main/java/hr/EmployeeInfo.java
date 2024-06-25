@@ -43,8 +43,9 @@ public class EmployeeInfo extends HttpServlet {
       out.printf("<tr><th>입사일자</th><td>%s</td></tr>", dto.getHire_date() );
       out.printf("<tr><th>급여</th><td>%s</td></tr>", dto.getSalary() );
       out.printf("<tr><th>부서</th><td>%s</td></tr>", dto.getDepartment_name() );
-      out.printf("<tr><th>업무</th><td>%s</td></tr>", dto.getJob_id() );
+      out.printf("<tr><th>업무</th><td>%s</td></tr>", dto.getJob_title() );
       out.print("</table>");
+      out.print("<button onclick='location=\"employeeModify?id="+ dto.getEmployee_id() +"\"'>정보수정</button>");
       out.print("</body>");
       out.print("</html>");
    }
