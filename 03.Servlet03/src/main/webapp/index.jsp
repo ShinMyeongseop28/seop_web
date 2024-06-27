@@ -15,6 +15,7 @@
 <div><a href="member/join.jsp">회원가입</a></div>
 <div><a href="member/login.jsp">로그인</a></div>
 <div><a href="gugudan.jsp">구구단 출력하기</a></div>
+<div><a href="calculator.jsp">계산기</a></div>
 <hr>
 <%
 // java.util.Date date = new java.util.Date();
@@ -29,6 +30,9 @@ String now = new SimpleDateFormat("yyyy년 MM월 dd일 E HH:mm:ss").format(date)
 <div>pageScope정보 : <%=pageContext.getAttribute("pageInfo") %></div>
 <div>requestScope정보: <%=request.getAttribute("requestInfo") %></div>
 
-<%@ include file="include/footer.jsp" %>
+<%-- <%@ include file="include/footer.jsp" %> --%>
+<jsp:include page="include/footer.jsp">
+<jsp:param value="010-9874-65412" name="phone"/>
+</jsp:include>
 </body>
 </html>
