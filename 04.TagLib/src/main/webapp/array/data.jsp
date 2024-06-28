@@ -15,7 +15,7 @@ ArrayList<String> list = new ArrayList<String>();
 list.add("자바");
 list.add("View");
 list.add("Oracle");
-request.setAttribute("subjects", list);
+session.setAttribute("subjects", list);
 
 HashMap<String, String> map = new HashMap<String, String>();
 map.put("홍길동", "062-974-5632");
