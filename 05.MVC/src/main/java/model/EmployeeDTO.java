@@ -2,7 +2,26 @@ package model;
 
 public class EmployeeDTO {
 	private int employee_id;
-	private String last_name, first_name;
+	private String last_name, first_name, email, hire_date, job_id;
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getHire_date() {
+		return hire_date;
+	}
+	public void setHire_date(String hire_date) {
+		this.hire_date = hire_date;
+	}
+	public String getJob_id() {
+		return job_id;
+	}
+	public void setJob_id(String job_id) {
+		this.job_id = job_id;
+	}
 	public int getEmployee_id() {
 		return employee_id;
 	}

@@ -9,11 +9,14 @@
 </head>
 <body>
 <h2>사원목록</h2>
+<button onclick="location='register.do'">신규사원</button>
+
 <table border="1">
-<tr><th>사번</th><th>성명</th></tr>
+<tr><th>사번</th><th>성명</th><th></th></tr>
 <c:forEach items="${ list }" var="dto" >
 <tr><td>${ dto.employee_id }</td>
-	<td>${ dto.last_name } ${dto.first_name }</td>
+	<td><a href="info.do?id=${dto.employee_id}">${ dto.last_name } ${dto.first_name }</a></td>
+	<td><a href="delete.do?id=${dto.employee_id}">삭제</a></td>
 </tr>
 </c:forEach>
 </table>
