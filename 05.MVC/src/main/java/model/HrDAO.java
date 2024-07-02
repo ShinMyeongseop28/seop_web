@@ -17,6 +17,8 @@ public class HrDAO {
 	private PreparedStatement ps;
 	private ResultSet rs;
 	
+	//CRUD (C:Create, R:Read, U:update, D:delete)
+	
 	//신규사원정보 저장
 	public void insertEmployee(EmployeeDTO dto) {
 		connect();
