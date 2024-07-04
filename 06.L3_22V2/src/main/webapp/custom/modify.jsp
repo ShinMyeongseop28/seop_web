@@ -7,11 +7,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="/include/header.jsp"/>
 <h2>회원정보 수정</h2>
 <form method="post" action="update.l3">
 <table border="1">
+<colgroup>
+	<col width="200px">
+	<col width="400px">
+</colgroup>
 <tr><th>아이디</th>
 <td><input type="text" value="${ dto.p_id }" name="p_id" readonly="readonly"> </td>
+</tr>
+<tr><th>비밀번호</th>
+<td><input type="text" value="${ dto.p_pw }" name="p_pw"> </td>
 </tr>
 <tr><th>이름</th>
 <td><input type="text" value="${ dto.c_name }" name="c_name"> </td>
