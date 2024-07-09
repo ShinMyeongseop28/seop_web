@@ -53,17 +53,67 @@ public class CustomerDAO {
 		
 	//고객정보 한 건 조회
 	public CustomerDTO getOneCustomer(int id) {
+		conn();
 		
-		return null;
+		CustomerDTO dto = null;
+		String sql = "select * from customer where id = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			if( rs.next() ) {
+				dto = new CustomerDTO();
+				dto.setEmail(rs.getString("email"));
+				dto.setGender(rs.getString("gender"));
+				dto.setId(rs.getInt("id"));
+				dto.setName(rs.getString("name"));
+				dto.setPhone(rs.getString("phone"));
+			}
+			
+		} catch (SQLException e) {
+		} finally {
+			disconn();
+		}
+		
+		return dto;
 		
 	}
 	//고객정보 수정 저장
 	public void updateCustomer(CustomerDTO dto) {
+		conn();
+		
+		String sql = "update customer "
+				+ "set name = ?, gender = ?, email = ?, phone = ? "
+				+ "where id = ?";
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getName());
+			ps.setString(2, dto.getGender());
+			ps.setString(3, dto.getEmail());
+			ps.setString(4, dto.getPhone());
+			ps.setInt(5, dto.getId());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+		} finally {
+			disconn();
+		}
 		
 	}
 	//고객정보 삭제
 	public void deleteCustomer(int id) {
+		conn();
 		
+		String sql = "delete from customer where id = ?";
+				
+		try {
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);   // 준비된 쿼리문에 ?가 있다면 ?에 값을 담기
+			ps.executeUpdate(); // developer에서의 ctrl+enter
+		} catch (SQLException e) {
+		} finally {
+			disconn();
+		}
 	}
 	
 	//자원회수 - DB연결개체 반납

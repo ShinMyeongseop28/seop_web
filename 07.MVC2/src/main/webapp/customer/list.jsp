@@ -21,7 +21,7 @@
 </tr>
 
 <c:forEach items="${list}" var="dto">
-<tr><th>${ dto.name }</th>
+<tr><th><a href="info.do?id=${dto.id}">${ dto.name }</a></th>
 	<th>${ dto.email }</th>
 	<th>${ dto.phone }</th>
 </tr>
