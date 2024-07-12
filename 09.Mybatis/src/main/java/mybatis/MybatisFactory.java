@@ -8,20 +8,38 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MybatisFactory {
-	private static SqlSession session;
+	private static SqlSession sessionHr;
+	private static SqlSession sessionHanul;
 		
-	public static SqlSession getInstance() {
-		if( session == null) {
+	public static SqlSession getHrInstance() {
+		if( sessionHr == null) {
 			String resource = "mybatis/config.xml";
 			InputStream inputStream;
 			try {
 				inputStream = Resources.getResourceAsStream(resource);
-				session = new SqlSessionFactoryBuilder().build(inputStream)
-														.openSession(true);
+				sessionHr = new SqlSessionFactoryBuilder()
+						.build(inputStream, "hr")
+						.openSession(true);
 			
 			} catch (IOException e) {
 			}
 		}
-		return session;
+		return sessionHr;
+	}
+	
+	public static SqlSession getHanulInstance() {
+		if( sessionHanul == null) {
+			String resource = "mybatis/config.xml";
+			InputStream inputStream;
+			try {
+				inputStream = Resources.getResourceAsStream(resource);
+				sessionHanul = new SqlSessionFactoryBuilder()
+						.build(inputStream, "hanul")
+						.openSession(true);
+				
+			} catch (IOException e) {
+			}
+		}
+		return sessionHanul;
 	}
 }

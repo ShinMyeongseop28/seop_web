@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import customer.DeleteCommand;
+import customer.InsertCommand;
 import customer.ListCommand;
 import customer.UpdateCommand;
 import customer.infoCommand;
@@ -58,6 +60,32 @@ public class CustomerController extends HttpServlet {
 			
 			//응답화면
 			view = "info.cu?id=" + request.getParameter("id");
+			redirect = true;
+		}
+		
+		//고객정보 삭제처리 요청
+		else if(uri.equals("/delete.cu")) {
+			//비지니스 로직
+			new DeleteCommand().execute(request, response);
+			
+			//응답화면
+			redirect = true;
+			view = "list.cu";
+		}
+		
+		//신규고객 등록화면 요청
+		else if(uri.equals("/register.cu")) {
+			//응답화면
+			view = "customer/register.jsp";
+		}
+		
+		//신규고객정보 신규저장 처리 요청
+		else if(uri.equals("/insert.cu")) {
+			//비지니스 로직
+			new InsertCommand().execute(request, response);
+			
+			//응답화면
+			view = "list.cu";
 			redirect = true;
 		}
 		
