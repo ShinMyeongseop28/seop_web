@@ -18,6 +18,7 @@ public class ListCommand implements Command {
 		//회원목록조회 메소드 호출
 		List<Level3DTO> list = new Level3DAO().getListOfLevel3();
 		request.setAttribute("list", list);
+		
 	}
 
 }

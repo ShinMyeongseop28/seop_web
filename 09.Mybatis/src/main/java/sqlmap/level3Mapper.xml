@@ -5,15 +5,32 @@
   
 <mapper namespace="level3">
 
+<!-- 회원정보 삭제 -->
+<delete id="deleteLevel3">
+delete from custom_01 where p_id = #{p_id}
+</delete>
+
+<!-- 회원정보수정 -->
+<update id="updateLevel3">
+update custom_01
+set c_name = #{c_name}, p_pw = #{p_pw}, c_email = #{c_email}, c_tel = #{c_tel}
+where p_id = #{p_id}
+</update>
+
+<!-- 회원정보조회 -->
+<select id="getOneLevel3" resultType="level3.model.Level3DTO">
+select * from custom_01 where p_id = #{p_id}
+</select>
+
 <!-- 신규회원저장 -->
 <insert id="registerLevel3">
 insert into custom_01
 (p_id, p_pw, c_name, c_email, c_tel)
-	( #{p_id}, #{p_pw}, #{c_name}, #{c_email}, #{c_tel} )
+values ( #{p_id}, #{p_pw}, #{c_name}, #{c_email}, #{c_tel} )
 </insert>
 
 <!-- 회원목록조회 -->
-<select id="getListOflevel3" resultType="level3.model.Level3DTO">
+<select id="getListOfLevel3" resultType="level3.model.Level3DTO">
 select * from custom_01
 </select>
 </mapper>

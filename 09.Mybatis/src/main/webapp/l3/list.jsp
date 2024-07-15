@@ -12,6 +12,9 @@
 
 <h3>Level3 SW개발 공개문제 - 회원목록</h3>
 
+<hr>
+<a href="register.l3">신규등록</a>
+
 <table border="1">
 <colgroup>
 	<col width="200px">
