@@ -29,5 +29,6 @@
   <mappers>
     <mapper resource="sqlmap/customerMapper.xml"/>
     <mapper resource="sqlmap/level3Mapper.xml"/>
+    <mapper resource="sqlmap/level5Mapper.xml"/>
   </mappers>
 </configuration>

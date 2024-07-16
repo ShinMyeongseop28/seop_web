@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="level5">
+
+<!-- 제품코드 삭제 -->
+<delete id="deleteCode">
+delete from product_code where code = #{code}
+</delete>
+
+<!-- 제품코드 등록 -->
+<insert id="registerCode">
+insert into product_code (code, maker)
+values ( #{code}, #{maker} )
+</insert>
+
+<!-- 제품코드에 대한 제조사변경 -->
+<update id="updateCode">
+update product_code
+set maker = #{maker}
+where code = #{code}
+</update>
+
+<!-- 제품코드 목록 -->
+<select id="getListOfCode" resultType="level5.model.Level5DTO">
+select * from product_code
+</select>
+
+<!-- 제품코드조회 -->
+<select id="getOneCode" resultType="level5.model.Level5DTO">
+select * from product_code
+where code = #{code}
+</select>
+</mapper>
