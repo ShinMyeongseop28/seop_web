@@ -3,7 +3,7 @@ package level3;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Common.Command;
+import common.Command;
 import level3.model.Level3DAO;
 
 public class DeleteLevel3 implements Command {

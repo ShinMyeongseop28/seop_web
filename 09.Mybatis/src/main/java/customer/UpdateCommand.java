@@ -3,7 +3,7 @@ package customer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Common.Command;
+import common.Command;
 import customer.model.CustomerDAO;
 import customer.model.CustomerDTO;
 

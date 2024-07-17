@@ -3,7 +3,7 @@ package level5;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Common.Command;
+import common.Command;
 import level5.model.Level5DAO;
 import level5.model.Level5DTO;
 
