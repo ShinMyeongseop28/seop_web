@@ -27,8 +27,6 @@
 
   <!--   쿼리문을 선언할 매퍼파일 지정 -->
   <mappers>
-<!--     <mapper resource="sqlmap/customerMapper.xml"/> -->
-<!--     <mapper resource="sqlmap/level3Mapper.xml"/> -->
-<!--     <mapper resource="sqlmap/level5Mapper.xml"/> -->
+    <mapper resource="sqlmap/boardMapper.xml"/>
   </mappers>
 </configuration>

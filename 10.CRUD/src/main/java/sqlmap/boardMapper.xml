@@ -5,8 +5,35 @@
   
 <mapper namespace="board">
 
+<!-- 전체 게시판 조회 -->
 <select id="getListOfBoard" resultType="board.model.BoardDTO">
 select * from board
+order by numb 
 </select>
+
+<!-- 게시판 세부내용 조회 -->
+<select id="getOneBoard" resultType="board.model.BoardDTO">
+select * from board
+where numb = #{numb}
+</select>
+
+<!-- 게시판 세부내용 수정 -->
+<update id="updateBoard">
+update board
+set subject = #{subject}, name = #{name}, email = #{email}, content = #{content}, password = #{password}
+where numb = #{numb}
+</update>
+
+<!-- 게시판 내용 삭제 -->
+<delete id="deleteBoard">
+delete from board
+where numb = #{numb}
+</delete>
+
+<!-- 게시판 내용 추가 -->
+<insert id="insertBoard">
+insert into board (numb, subject, name, email, NALJA, content, password)
+values (seq_board.nextval, #{subject}, #{name}, #{email}, #{nalja}, #{content}, #{password})
+</insert>
 
 </mapper>
