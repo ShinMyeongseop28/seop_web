@@ -10,6 +10,7 @@
 <body>
 <jsp:include page="/include/header.jsp"/>
 
+<hr>
 <h3>${ dto.subject }</h3>
 <table border="1">
 <colgroup>
@@ -31,5 +32,6 @@
 <hr>
 <button type="button" onclick="location='modify.bo?id=${ dto.numb }'">수정</button>
 <button type="button" onclick= "javascript: if( confirm('정말 [${dto.subject}] 게시판을 삭제하시겠습니까?')) {location='delete.bo?id=${ dto.numb }'}">삭제</button>
+<button style="margin-left: 100px" type="button" onclick="location='list.bo'">리스트</button>
 </body>
 </html>

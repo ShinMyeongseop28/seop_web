@@ -24,6 +24,11 @@ public class BoardDAO {
 		return sql.selectOne("board.getOneBoard", numb);
 	}
 	
+	//게시판 조회수 증가
+	public void increaseCheckNum(BoardDTO dto) {
+		sql.update("board.increaseCheckNum", dto);
+	}
+	
 	//게시판 수정
 	public int updateBoard(BoardDTO dto) {
 		return sql.update("board.updateBoard", dto);

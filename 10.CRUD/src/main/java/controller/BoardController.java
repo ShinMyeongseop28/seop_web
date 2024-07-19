@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import board.InfoBoard;
 import board.InsertBoard;
 import board.ListCommand;
 import board.UpdateBoard;
+import board.modifyBoard;
 
 @WebServlet("*.bo")
 public class BoardController extends HttpServlet {
@@ -44,7 +46,7 @@ public class BoardController extends HttpServlet {
 		//게시판 수정화면 요청
 		else if(uri.equals("/modify.bo")) {
 			//비지니스 로직
-			new InfoBoard().execute(request, response);
+			new modifyBoard().execute(request, response);
 			
 			//응답화면
 			view = "board/modify.jsp";

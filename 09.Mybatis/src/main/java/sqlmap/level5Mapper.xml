@@ -26,6 +26,7 @@ where code = #{code}
 <!-- 제품코드 목록 -->
 <select id="getListOfCode" resultType="level5.model.Level5DTO">
 select * from product_code
+order by code
 </select>
 
 <!-- 제품코드조회 -->

@@ -18,7 +18,7 @@
 	<col width="800px">
 </colgroup>
 <tr><th>제목</th>
-	<td><input type="text" name="subject"></td>
+	<td><input type="text" name="subject" style="width:350px"></td>
 </tr>
 <tr><th>작성자</th>
 	<td><input type="text" name="name"></td>
@@ -38,7 +38,7 @@
 </tr>
 </table>
 <button>등록하기</button>
-<button>다시입력</button>
+<button type="button" onclick="location='register.bo'">다시입력</button>
 <button type="button" onclick="location='list.bo'">작성취소</button>
 </form>
 

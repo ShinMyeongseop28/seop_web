@@ -10,8 +10,6 @@
 <body>
 <jsp:include page="/include/header.jsp"/>
 
-<h3>게시판 조회</h3>
-
 <button type="button" onclick="location='register.bo'">글올리기</button>
 <table border="1">
 <colgroup>

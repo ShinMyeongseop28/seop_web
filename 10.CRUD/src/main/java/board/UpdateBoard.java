@@ -24,5 +24,4 @@ public class UpdateBoard implements Command {
 		
 		new BoardDAO().updateBoard(dto);
 	}
-
 }

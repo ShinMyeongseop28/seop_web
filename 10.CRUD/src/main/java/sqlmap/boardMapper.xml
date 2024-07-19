@@ -17,6 +17,13 @@ select * from board
 where numb = #{numb}
 </select>
 
+<!-- 게시판 조회수 증가 -->
+<update id="increaseCheckNum">
+update board
+set check_num = #{check_num} + 1
+where numb = #{numb}
+</update>
+
 <!-- 게시판 세부내용 수정 -->
 <update id="updateBoard">
 update board
